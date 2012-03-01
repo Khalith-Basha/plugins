@@ -54,7 +54,7 @@ Short Name: list_seller_items
                 // We may want to have param-specific searches
                 switch ($key) {
                     case 'seller_post':
-                        Search::newInstance()->addConditions(sprintf("%st_item.fk_i_user_id = %d ", DB_TABLE_PREFIX, $value)) ;
+                        ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->addConditions(sprintf("%st_item.fk_i_user_id = %d ", DB_TABLE_PREFIX, $value)) ;
 				    break ;
                 }
 			}

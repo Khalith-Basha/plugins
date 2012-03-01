@@ -17,13 +17,13 @@ Plugin update URI: http://www.opensourceclassifieds.org/files/plugins/google_ana
 
         $conn = getConnection(); 
         $conn->autocommit(true);
-        Preference::newInstance()->insert($fields) ;
+        ClassLoader::getInstance()->getClassInstance( 'Model_Preference' )->insert($fields) ;
     }
 
     function google_analytics_call_after_uninstall() {
         $conn = getConnection(); 
         $conn->autocommit(true);
-        Preference::newInstance()->delete( array("s_section" => "plugin-google_analytics", "s_name" => "google_analytics_id") ) ;
+        ClassLoader::getInstance()->getClassInstance( 'Model_Preference' )->delete( array("s_section" => "plugin-google_analytics", "s_name" => "google_analytics_id") ) ;
     }
 
     function google_analytics_admin() {
@@ -52,8 +52,8 @@ Plugin update URI: http://www.opensourceclassifieds.org/files/plugins/google_ana
     osc_add_hook(osc_plugin_path(__FILE__)."_configure", 'google_analytics_admin') ;
     osc_add_hook('footer', 'google_analytics_footer') ;
 
-?>
-function _info()
+   /*
+    function _info()
 {
 	return array(
 		'name' => '',
@@ -66,4 +66,5 @@ function _info()
 	);
 }
 
+    */
 

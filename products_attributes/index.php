@@ -19,11 +19,11 @@ function products_search_conditions($params) {
             // We may want to  have param-specific searches
             switch($key) {
                 case 'make':
-                    Search::newInstance()->addConditions(sprintf("%st_item_products_attr.s_make LIKE '%s%%'", DB_TABLE_PREFIX, $value));
+                    ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->addConditions(sprintf("%st_item_products_attr.s_make LIKE '%s%%'", DB_TABLE_PREFIX, $value));
                     $has_conditions = true;
                     break;
                 case 'model':
-                    Search::newInstance()->addConditions(sprintf("%st_item_products_attr.s_model LIKE '%s%%'", DB_TABLE_PREFIX, $value));
+                    ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->addConditions(sprintf("%st_item_products_attr.s_model LIKE '%s%%'", DB_TABLE_PREFIX, $value));
                     $has_conditions = true;
                     break;
                 default:
@@ -33,8 +33,8 @@ function products_search_conditions($params) {
 
         // Only if we have some values at the params we add our table and link with the ID of the item.
         if($has_conditions) {
-            Search::newInstance()->addConditions(sprintf("%st_item.pk_i_id = %st_item_products_attr.fk_i_item_id ", DB_TABLE_PREFIX, DB_TABLE_PREFIX));
-            Search::newInstance()->addTable(sprintf("%st_item_products_attr", DB_TABLE_PREFIX));
+            ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->addConditions(sprintf("%st_item.pk_i_id = %st_item_products_attr.fk_i_item_id ", DB_TABLE_PREFIX, DB_TABLE_PREFIX));
+            ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->addTable(sprintf("%st_item_products_attr", DB_TABLE_PREFIX));
         }
 }
 

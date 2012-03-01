@@ -1,6 +1,6 @@
 <?php
 
-    $dao_preference = new Preference() ;
+    $dao_preference = ClassLoader::getInstance()->getClassInstance( 'Model_Preference' );
     $webid          = Params::getParam('webid');
     $option         = Params::getParam('option');
     

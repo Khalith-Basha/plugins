@@ -22,87 +22,87 @@ function realstate_search_conditions($params = null) {
                 switch ($key) {
                     case 'numFloor':
                         if (preg_match('|([0-9]+) - ([0-9]+)|', $value, $match)) {
-                            Search::newInstance()->addConditions(sprintf("%st_item_house_attr.i_num_floors >= %d AND %st_item_house_attr.i_num_floors <= %d", DB_TABLE_PREFIX, $match[1], DB_TABLE_PREFIX, $match[2]));
+                            ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->addConditions(sprintf("%st_item_house_attr.i_num_floors >= %d AND %st_item_house_attr.i_num_floors <= %d", DB_TABLE_PREFIX, $match[1], DB_TABLE_PREFIX, $match[2]));
                             $has_conditions = true;
                         }
                         break;
                     case 'rooms':
                         if (preg_match('|([0-9]+) - ([0-9]+)|', $value, $match)) {
-                            Search::newInstance()->addConditions(sprintf("%st_item_house_attr.i_num_rooms >= %d AND %st_item_house_attr.i_num_rooms <= %d", DB_TABLE_PREFIX, $match[1], DB_TABLE_PREFIX, $match[2]));
+                            ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->addConditions(sprintf("%st_item_house_attr.i_num_rooms >= %d AND %st_item_house_attr.i_num_rooms <= %d", DB_TABLE_PREFIX, $match[1], DB_TABLE_PREFIX, $match[2]));
                             $has_conditions = true;
                         }
                         break;
                     case 'rooms_min':
-                        Search::newInstance()->addConditions(sprintf("%st_item_house_attr.i_num_rooms >= %d", DB_TABLE_PREFIX, $value));
+                        ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->addConditions(sprintf("%st_item_house_attr.i_num_rooms >= %d", DB_TABLE_PREFIX, $value));
                         $has_conditions = true;
                         break;
                     case 'bathrooms':
                         if (preg_match('|([0-9]+) - ([0-9]+)|', $value, $match)) {
-                            Search::newInstance()->addConditions(sprintf("%st_item_house_attr.i_num_bathrooms >= %d AND %st_item_house_attr.i_num_bathrooms <= %d", DB_TABLE_PREFIX, $match[1], DB_TABLE_PREFIX, $match[2]));
+                            ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->addConditions(sprintf("%st_item_house_attr.i_num_bathrooms >= %d AND %st_item_house_attr.i_num_bathrooms <= %d", DB_TABLE_PREFIX, $match[1], DB_TABLE_PREFIX, $match[2]));
                             $has_conditions = true;
                         }
                         break;
                     case 'garages':
                         if (preg_match('|([0-9]+) - ([0-9]+)|', $value, $match)) {
-                            Search::newInstance()->addConditions(sprintf("%st_item_house_attr.i_num_garages >= %d AND %st_item_house_attr.i_num_garages <= %d", DB_TABLE_PREFIX, $match[1], DB_TABLE_PREFIX, $match[2]));
+                            ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->addConditions(sprintf("%st_item_house_attr.i_num_garages >= %d AND %st_item_house_attr.i_num_garages <= %d", DB_TABLE_PREFIX, $match[1], DB_TABLE_PREFIX, $match[2]));
                             $has_conditions = true;
                         }
                         break;
                     case 'year':
                         if (preg_match('|([0-9]+) - ([0-9]+)|', $value, $match)) {
-                            Search::newInstance()->addConditions(sprintf("(%st_item_house_attr.i_year = 0 || (%st_item_house_attr.i_year >= %d AND %st_item_house_attr.i_year <= %d))", DB_TABLE_PREFIX, DB_TABLE_PREFIX, $match[1], DB_TABLE_PREFIX, $match[2]));
+                            ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->addConditions(sprintf("(%st_item_house_attr.i_year = 0 || (%st_item_house_attr.i_year >= %d AND %st_item_house_attr.i_year <= %d))", DB_TABLE_PREFIX, DB_TABLE_PREFIX, $match[1], DB_TABLE_PREFIX, $match[2]));
                             $has_conditions = true;
                         }
                         break;
                     case 'sq':
                         if (preg_match('|([0-9]+) - ([0-9]+)|', $value, $match)) {
-                           Search::newInstance()->addConditions(sprintf("%st_item_house_attr.s_square_meters >= %d AND %st_item_house_attr.s_square_meters <= %d", DB_TABLE_PREFIX, $match[1], DB_TABLE_PREFIX, $match[2]));
+                           ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->addConditions(sprintf("%st_item_house_attr.s_square_meters >= %d AND %st_item_house_attr.s_square_meters <= %d", DB_TABLE_PREFIX, $match[1], DB_TABLE_PREFIX, $match[2]));
                             $has_conditions = true;
                         }
                         break;
                     case 'heating':
-                        Search::newInstance()->addConditions(sprintf("%st_item_house_attr.b_heating = %d ", DB_TABLE_PREFIX, $value));
+                        ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->addConditions(sprintf("%st_item_house_attr.b_heating = %d ", DB_TABLE_PREFIX, $value));
                         $has_conditions = true;
                         break;
                     case 'airCondition':
-                        Search::newInstance()->addConditions(sprintf("%st_item_house_attr.b_air_condition = %d ", DB_TABLE_PREFIX, $value));
+                        ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->addConditions(sprintf("%st_item_house_attr.b_air_condition = %d ", DB_TABLE_PREFIX, $value));
                         $has_conditions = true;
                         break;
                     case 'elevator':
-                        Search::newInstance()->addConditions(sprintf("%st_item_house_attr.b_elevator = %d ", DB_TABLE_PREFIX, $value));
+                        ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->addConditions(sprintf("%st_item_house_attr.b_elevator = %d ", DB_TABLE_PREFIX, $value));
                         $has_conditions = true;
                         break;
                     case 'terrace':
-                        Search::newInstance()->addConditions(sprintf("%st_item_house_attr.b_terrace = %d ", DB_TABLE_PREFIX, $value));
+                        ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->addConditions(sprintf("%st_item_house_attr.b_terrace = %d ", DB_TABLE_PREFIX, $value));
                         $has_conditions = true;
                         break;
                     case 'parking':
-                        Search::newInstance()->addConditions(sprintf("%st_item_house_attr.b_parking = %d ", DB_TABLE_PREFIX, $value));
+                        ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->addConditions(sprintf("%st_item_house_attr.b_parking = %d ", DB_TABLE_PREFIX, $value));
                         $has_conditions = true;
                         break;
                     case 'furnished':
                         if ($value != "") {
-                            Search::newInstance()->addConditions(sprintf("%st_item_house_attr.b_furnished = %d ", DB_TABLE_PREFIX, $value));
+                            ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->addConditions(sprintf("%st_item_house_attr.b_furnished = %d ", DB_TABLE_PREFIX, $value));
                             $has_conditions = true;
                         }
                         break;
                     case 'new':
-                        Search::newInstance()->addConditions(sprintf("%st_item_house_attr.b_new = %d ", DB_TABLE_PREFIX, $value));
+                        ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->addConditions(sprintf("%st_item_house_attr.b_new = %d ", DB_TABLE_PREFIX, $value));
                         $has_conditions = true;
                         break;
                     case 'by_owner':
-                        Search::newInstance()->addConditions(sprintf("%st_item_house_attr.b_by_owner = %d ", DB_TABLE_PREFIX, $value));
+                        ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->addConditions(sprintf("%st_item_house_attr.b_by_owner = %d ", DB_TABLE_PREFIX, $value));
                         $has_conditions = true;
                         break;
                     case 'property_type':
                         if($value!='') {
-                            Search::newInstance()->addConditions(sprintf("%st_item_house_attr.e_type = '%s' ", DB_TABLE_PREFIX, $value));
+                            ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->addConditions(sprintf("%st_item_house_attr.e_type = '%s' ", DB_TABLE_PREFIX, $value));
                             $has_conditions = true;
                         }
                         break;
                     case 'p_type':
                         if($value!='') {
-                            Search::newInstance()->addConditions(sprintf("%st_item_house_attr.fk_i_property_type_id = %d ", DB_TABLE_PREFIX, $value));
+                            ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->addConditions(sprintf("%st_item_house_attr.fk_i_property_type_id = %d ", DB_TABLE_PREFIX, $value));
                         }
                         $has_conditions = true;
                         break;
@@ -114,10 +114,10 @@ function realstate_search_conditions($params = null) {
 
         // Only if we have some values at the params we add our table and link with the ID of the item.
         if ($has_conditions) {
-            Search::newInstance()->addConditions(sprintf("%st_item.pk_i_id = %st_item_house_attr.fk_i_item_id ", DB_TABLE_PREFIX, DB_TABLE_PREFIX));
-            Search::newInstance()->addConditions(sprintf("%st_item.pk_i_id = %st_item_house_description_attr.fk_i_item_id ", DB_TABLE_PREFIX, DB_TABLE_PREFIX));
-            Search::newInstance()->addTable(sprintf("%st_item_house_attr", DB_TABLE_PREFIX));
-            Search::newInstance()->addTable(sprintf("%st_item_house_description_attr", DB_TABLE_PREFIX));
+            ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->addConditions(sprintf("%st_item.pk_i_id = %st_item_house_attr.fk_i_item_id ", DB_TABLE_PREFIX, DB_TABLE_PREFIX));
+            ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->addConditions(sprintf("%st_item.pk_i_id = %st_item_house_description_attr.fk_i_item_id ", DB_TABLE_PREFIX, DB_TABLE_PREFIX));
+            ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->addTable(sprintf("%st_item_house_attr", DB_TABLE_PREFIX));
+            ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->addTable(sprintf("%st_item_house_description_attr", DB_TABLE_PREFIX));
         }
     }
 }

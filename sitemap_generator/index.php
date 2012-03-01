@@ -85,7 +85,7 @@ function sitemap_generator() {
     foreach($countries as $country) {
         $regions = Region::newInstance()->getByCountry($country['pk_c_code']);
         foreach($regions as $region) {
-            $cities = Search::newInstance()->listCities($region['pk_i_id']);
+            $cities = ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->listCities($region['pk_i_id']);
             $l = min(count($cities), 30);
             for($k=0;$k<$l;$k++) {
                 if($cities[$k]['items']>$min) {

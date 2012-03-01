@@ -7,13 +7,13 @@
     $itemsPerPage = (Params::getParam('itemsPerPage') != '') ? Params::getParam('itemsPerPage') : 5;
     $iPage        = (Params::getParam('iPage') != '') ? Params::getParam('iPage') : 0;
 
-    Search::newInstance()->addConditions(sprintf("%st_item_watchlist.fk_i_user_id = %d", DB_TABLE_PREFIX, $i_userId));
-    Search::newInstance()->addConditions(sprintf("%st_item_watchlist.fk_i_item_id = %st_item.pk_i_id", DB_TABLE_PREFIX, DB_TABLE_PREFIX));
-    Search::newInstance()->addTable(sprintf("%st_item_watchlist", DB_TABLE_PREFIX));
-    Search::newInstance()->page($iPage, $itemsPerPage);
+    ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->addConditions(sprintf("%st_item_watchlist.fk_i_user_id = %d", DB_TABLE_PREFIX, $i_userId));
+    ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->addConditions(sprintf("%st_item_watchlist.fk_i_item_id = %st_item.pk_i_id", DB_TABLE_PREFIX, DB_TABLE_PREFIX));
+    ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->addTable(sprintf("%st_item_watchlist", DB_TABLE_PREFIX));
+    ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->page($iPage, $itemsPerPage);
 
-    $aItems      = Search::newInstance()->doSearch();
-    $iTotalItems = Search::newInstance()->count();
+    $aItems      = ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->doSearch();
+    $iTotalItems = ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->count();
     $iNumPages   = ceil($iTotalItems / $itemsPerPage) ;
 
     View::newInstance()->_exportVariableToView('items', $aItems);

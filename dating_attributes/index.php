@@ -18,15 +18,15 @@ function dating_search_conditions($params) {
             // We may want to  have param-specific searches
             switch($key) {
                 case 'genderFrom':
-                    Search::newInstance()->addConditions(sprintf("%st_item_dating_attr.e_gender_to = '%s'", DB_TABLE_PREFIX, $value));
+                    ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->addConditions(sprintf("%st_item_dating_attr.e_gender_to = '%s'", DB_TABLE_PREFIX, $value));
                     $has_conditions = true;
                     break;
                 case 'genderTo':
-                    Search::newInstance()->addConditions(sprintf("%st_item_dating_attr.e_gender_from = '%s'", DB_TABLE_PREFIX, $value));
+                    ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->addConditions(sprintf("%st_item_dating_attr.e_gender_from = '%s'", DB_TABLE_PREFIX, $value));
                     $has_conditions = true;
                     break;
                 case 'relation':
-                    Search::newInstance()->addConditions(sprintf("%st_item_dating_attr.e_relation = '%s'", DB_TABLE_PREFIX, $value));
+                    ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->addConditions(sprintf("%st_item_dating_attr.e_relation = '%s'", DB_TABLE_PREFIX, $value));
                     $has_conditions = true;
                     break;
                 default:
@@ -36,8 +36,8 @@ function dating_search_conditions($params) {
         
         // Only if we have some values at the params we add our table and link with the ID of the item.
         if($has_conditions) {
-            Search::newInstance()->addConditions(sprintf("%st_item.pk_i_id = %st_item_dating_attr.fk_i_item_id ", DB_TABLE_PREFIX, DB_TABLE_PREFIX));
-            Search::newInstance()->addTable(sprintf("%st_item_dating_attr", DB_TABLE_PREFIX));
+            ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->addConditions(sprintf("%st_item.pk_i_id = %st_item_dating_attr.fk_i_item_id ", DB_TABLE_PREFIX, DB_TABLE_PREFIX));
+            ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->addTable(sprintf("%st_item_dating_attr", DB_TABLE_PREFIX));
         }
     
 }

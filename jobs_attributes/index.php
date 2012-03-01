@@ -21,20 +21,20 @@ function job_search_conditions($params = '') {
             switch($key) {
                 case 'relation':
                     if($value != "") {
-                        Search::newInstance()->addConditions(sprintf("%st_item_job_attr.e_relation = '%s'", DB_TABLE_PREFIX, $value));
+                        ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->addConditions(sprintf("%st_item_job_attr.e_relation = '%s'", DB_TABLE_PREFIX, $value));
                         $has_conditions = true;
                     }
                     break;
                 case 'companyName':
                     if($value != '') {
-                        Search::newInstance()->addConditions(sprintf("%st_item_job_attr.s_company_name LIKE '%%%s%%'", DB_TABLE_PREFIX, $value));
+                        ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->addConditions(sprintf("%st_item_job_attr.s_company_name LIKE '%%%s%%'", DB_TABLE_PREFIX, $value));
                         $has_conditions = true;
                     }
                     break;
                 case 'positionType':
 
                     if($value!='UNDEF' && $value != '') {
-                        Search::newInstance()->addConditions(sprintf("%st_item_job_attr.e_position_type = '%s'", DB_TABLE_PREFIX, $value));
+                        ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->addConditions(sprintf("%st_item_job_attr.e_position_type = '%s'", DB_TABLE_PREFIX, $value));
                         $has_conditions = true;
                     }
                     break;
@@ -46,8 +46,8 @@ function job_search_conditions($params = '') {
 
                         $salaryHour = job_to_salary_hour( $params['salaryPeriod'], $salaryMin, $salaryMax) ;
 
-                        Search::newInstance()->addConditions(sprintf("%st_item_job_attr.i_salary_min_hour >= %d", DB_TABLE_PREFIX, $salaryHour['min']));
-                        Search::newInstance()->addConditions(sprintf("%st_item_job_attr.i_salary_max_hour <= %d", DB_TABLE_PREFIX, $salaryHour['max']));
+                        ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->addConditions(sprintf("%st_item_job_attr.i_salary_min_hour >= %d", DB_TABLE_PREFIX, $salaryHour['min']));
+                        ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->addConditions(sprintf("%st_item_job_attr.i_salary_max_hour <= %d", DB_TABLE_PREFIX, $salaryHour['max']));
                         $has_conditions = true;
                     }
                     break;
@@ -58,10 +58,10 @@ function job_search_conditions($params = '') {
 
         // Only if we have some values at the params we add our table and link with the ID of the item.
         if($has_conditions) {
-            Search::newInstance()->addConditions(sprintf("%st_item_job_attr.fk_i_item_id = %st_item.pk_i_id", DB_TABLE_PREFIX, DB_TABLE_PREFIX));
-            Search::newInstance()->addConditions(sprintf("%st_item_job_description_attr.fk_i_item_id = %st_item.pk_i_id", DB_TABLE_PREFIX, DB_TABLE_PREFIX));
-            Search::newInstance()->addTable(sprintf("%st_item_job_attr", DB_TABLE_PREFIX));
-            Search::newInstance()->addTable(sprintf("%st_item_job_description_attr", DB_TABLE_PREFIX));
+            ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->addConditions(sprintf("%st_item_job_attr.fk_i_item_id = %st_item.pk_i_id", DB_TABLE_PREFIX, DB_TABLE_PREFIX));
+            ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->addConditions(sprintf("%st_item_job_description_attr.fk_i_item_id = %st_item.pk_i_id", DB_TABLE_PREFIX, DB_TABLE_PREFIX));
+            ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->addTable(sprintf("%st_item_job_attr", DB_TABLE_PREFIX));
+            ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->addTable(sprintf("%st_item_job_description_attr", DB_TABLE_PREFIX));
         }
     }
 }

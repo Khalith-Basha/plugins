@@ -38,9 +38,9 @@ Short Name: buysell
         foreach($params as $key => $value) {
             if($key=="buysell_type") {
                 if($value!='' && $value!='ALL') {
-                    Search::newInstance()->addConditions(sprintf("%st_item_buysell.s_type = '%s'", DB_TABLE_PREFIX, $value));
-                    Search::newInstance()->addConditions(sprintf("%st_item.pk_i_id = %st_item_buysell.fk_i_item_id ", DB_TABLE_PREFIX, DB_TABLE_PREFIX));
-                    Search::newInstance()->addTable(sprintf("%st_item_buysell", DB_TABLE_PREFIX));
+                    ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->addConditions(sprintf("%st_item_buysell.s_type = '%s'", DB_TABLE_PREFIX, $value));
+                    ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->addConditions(sprintf("%st_item.pk_i_id = %st_item_buysell.fk_i_item_id ", DB_TABLE_PREFIX, DB_TABLE_PREFIX));
+                    ClassLoader::getInstance()->getClassInstance( 'Model_Search' )->addTable(sprintf("%st_item_buysell", DB_TABLE_PREFIX));
                 }
             }
         }
