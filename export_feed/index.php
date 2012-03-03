@@ -1,13 +1,11 @@
 <?php
-/*
-Plugin Name: Extra feeds
-Plugin URI: http://www.opensourceclassifieds.org/
-Description: Extra feeds.
-Version: 2.1.2
-Author: OpenSourceClassifieds
-Author URI: http://www.opensourceclassifieds.org/
-Short Name: extra_feeds
-*/
+
+function getPluginInfo_export_feed()
+{
+	return array(
+		'name' => 'Extra feeds',
+	);
+}
 
 function feed_indeed() {
     require_once osc_plugins_path() . osc_plugin_folder(__FILE__) . "indeed.php";
@@ -142,4 +140,3 @@ osc_add_filter('feed_oodle_jobs', 'feed_oodle_jobs');
 osc_add_filter('feed_oodle_cars', 'feed_oodle_cars');
 osc_add_filter('feed_oodle_realstate', 'feed_oodle_realstate');
 
-?>

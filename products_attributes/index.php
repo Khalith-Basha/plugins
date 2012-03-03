@@ -1,14 +1,12 @@
 <?php
-/*
-Plugin Name: Products attributes
-Plugin URI: http://www.opensourceclassifieds.org/
-Description: This plugin extends a category of items to store products attributes such as make, model and so on.
-Version: 2.1.1
-Author: OpenSourceClassifieds
-Author URI: http://www.opensourceclassifieds.org/
-Short Name: products_plugin
-Plugin update URI: http://www.opensourceclassifieds.org/files/plugins/products_attributes/update.php
-*/
+
+function getPluginInfo_products_attributes()
+{
+	return array(
+		'name' => 'Products attributes',
+		'description' => 'This plugin extends a category of items to store products attributes such as make, model and so on'
+	);
+}
 
 // Adds some plugin-specific search conditions
 function products_search_conditions($params) {
@@ -157,11 +155,11 @@ function products_admin_configuration() {
 }
 
 function products_pre_item_post() {
-    Session::newInstance()->_setForm('pp_make' , Params::getParam('make'));
-    Session::newInstance()->_setForm('pp_model'   , Params::getParam('model'));
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_setForm('pp_make' , Params::getParam('make'));
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_setForm('pp_model'   , Params::getParam('model'));
     // keep values on session
-    Session::newInstance()->_keepForm('pp_make' );
-    Session::newInstance()->_keepForm('pp_model');
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_keepForm('pp_make' );
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_keepForm('pp_model');
 }
 
 // This is needed in order to be able to activate the plugin
@@ -195,4 +193,3 @@ osc_add_hook('delete_item', 'products_delete_item');
 // previous to insert item
 osc_add_hook('pre_item_post', 'products_pre_item_post') ;
 
-?>

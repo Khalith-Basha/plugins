@@ -7,8 +7,8 @@
 <div class="box">
     <div class="row">
         <?php
-            if( Session::newInstance()->_getForm('pre_property_type') != '' ) {
-                $detail['e_type'] = Session::newInstance()->_getForm('pre_property_type');
+            if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_property_type') != '' ) {
+                $detail['e_type'] = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_property_type');
             }
         ?>
         <label for="property_type"><?php _e('Type', 'realstate_attributes'); ?></label>
@@ -24,8 +24,8 @@
         ?>
             <p>
                 <?php
-                    if( Session::newInstance()->_getForm('pre_p_type') != '' ) {
-                        $detail['fk_i_property_type_id'] = Session::newInstance()->_getForm('pre_p_type');
+                    if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_p_type') != '' ) {
+                        $detail['fk_i_property_type_id'] = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_p_type');
                     }
                 ?>
                 <label><?php _e('Property type', 'realstate_attributes'); ?></label><br />
@@ -38,8 +38,8 @@
         <?php } else { ?>
             <div class="tabber">
             <?php
-                if( Session::newInstance()->_getForm('pre_p_type') != '' ) {
-                    $detail['fk_i_property_type_id'] = Session::newInstance()->_getForm('pre_p_type');
+                if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_p_type') != '' ) {
+                    $detail['fk_i_property_type_id'] = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_p_type');
                 }
             ?>
             <?php foreach($locales as $locale) {?>
@@ -60,8 +60,8 @@
     </div>
     <div class="row">
         <?php
-            if( Session::newInstance()->_getForm('pre_numRooms') != '' ) {
-                $detail['i_num_rooms'] = Session::newInstance()->_getForm('pre_numRooms');
+            if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_numRooms') != '' ) {
+                $detail['i_num_rooms'] = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_numRooms');
             }
         ?>
         <label for="numRooms"><?php _e('Num. of rooms', 'realstate_attributes'); ?></label>
@@ -73,8 +73,8 @@
     </div>
     <div class="row">
         <?php
-            if( Session::newInstance()->_getForm('pre_numBathrooms') != '' ) {
-                $detail['i_num_bathrooms'] = Session::newInstance()->_getForm('pre_numBathrooms');
+            if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_numBathrooms') != '' ) {
+                $detail['i_num_bathrooms'] = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_numBathrooms');
             }
         ?>
         <label for="numBathrooms"><?php _e('Num. of bathrooms', 'realstate_attributes'); ?></label>
@@ -86,8 +86,8 @@
     </div>
     <div class="row">
         <?php
-            if( Session::newInstance()->_getForm('pre_status') != '' ) {
-                $detail['e_status'] = Session::newInstance()->_getForm('pre_status');
+            if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_status') != '' ) {
+                $detail['e_status'] = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_status');
             }
         ?>
         <label for="status"><?php _e('Status', 'realstate_attributes'); ?></label>
@@ -99,8 +99,8 @@
     </div>
     <div class="row">
         <?php
-            if( Session::newInstance()->_getForm('pre_squareMeters') != '' ) {
-                $detail['s_square_meters'] = Session::newInstance()->_getForm('pre_squareMeters');
+            if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_squareMeters') != '' ) {
+                $detail['s_square_meters'] = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_squareMeters');
             }
         ?>
         <label for="squareMeters"><?php _e('Square meters', 'realstate_attributes'); ?></label>
@@ -108,8 +108,8 @@
     </div>
     <div class="row">
         <?php
-            if( Session::newInstance()->_getForm('pre_year') != '' ) {
-                $detail['i_year'] = Session::newInstance()->_getForm('pre_year');
+            if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_year') != '' ) {
+                $detail['i_year'] = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_year');
             }
         ?>
         <label for="year"><?php _e('Construction Year', 'realstate_attributes'); ?></label>
@@ -117,8 +117,8 @@
     </div>
     <div class="row">
         <?php
-            if( Session::newInstance()->_getForm('pre_squareMetersTotal') != '' ) {
-                $detail['i_plot_area'] = Session::newInstance()->_getForm('pre_squareMetersTotal');
+            if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_squareMetersTotal') != '' ) {
+                $detail['i_plot_area'] = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_squareMetersTotal');
             }
         ?>
         <label for="squareMetersTotal"><?php _e('Square meters (total)', 'realstate_attributes'); ?></label>
@@ -126,8 +126,8 @@
     </div>
     <div class="row">
         <?php
-            if( Session::newInstance()->_getForm('pre_numFloors') != '' ) {
-                $detail['i_num_floors'] = Session::newInstance()->_getForm('pre_numFloors');
+            if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_numFloors') != '' ) {
+                $detail['i_num_floors'] = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_numFloors');
             }
         ?>
         <label for="numFloors"><?php _e('Num. of floors', 'realstate_attributes'); ?></label>
@@ -139,8 +139,8 @@
     </div>
     <div class="row">
         <?php
-            if( Session::newInstance()->_getForm('pre_numGarages') != '' ) {
-                $detail['i_num_garages'] = Session::newInstance()->_getForm('pre_numGarages');
+            if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_numGarages') != '' ) {
+                $detail['i_num_garages'] = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_numGarages');
             }
         ?>
         <label for="numGarages"><?php _e('Num. of garages (place for a car = one garage)', 'realstate_attributes'); ?></label>
@@ -152,8 +152,8 @@
     </div>
     <div class="row">
         <?php
-            if( Session::newInstance()->_getForm('pre_condition') != '' ) {
-                $detail['s_condition'] = Session::newInstance()->_getForm('pre_condition');
+            if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_condition') != '' ) {
+                $detail['s_condition'] = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_condition');
             }
         ?>
         <label for="condition"><?php _e('Condition', 'realstate_attributes'); ?></label>
@@ -161,8 +161,8 @@
     </div>
     <div class="row">
         <?php
-            if( Session::newInstance()->_getForm('pre_agency') != '' ) {
-                $detail['s_agency'] = Session::newInstance()->_getForm('pre_agency');
+            if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_agency') != '' ) {
+                $detail['s_agency'] = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_agency');
             }
         ?>
         <label for="agency"><?php _e('Agency', 'realstate_attributes'); ?></label>
@@ -170,8 +170,8 @@
     </div>
     <div class="row">
         <?php
-            if( Session::newInstance()->_getForm('pre_floorNumber') != '' ) {
-                $detail['i_floor_number'] = Session::newInstance()->_getForm('pre_floorNumber');
+            if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_floorNumber') != '' ) {
+                $detail['i_floor_number'] = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_floorNumber');
             }
         ?>
         <label for="floorNumber"><?php _e('Floor Number', 'realstate_attributes'); ?></label>
@@ -182,64 +182,64 @@
         <div style="clear:both;"></div>
         <ul style="list-style: none outside none;">
             <?php
-                if( Session::newInstance()->_getForm('pre_heating') != '' ) {
-                    $detail['b_heating'] = Session::newInstance()->_getForm('pre_heating');
+                if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_heating') != '' ) {
+                    $detail['b_heating'] = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_heating');
                 }
             ?>
             <li> 
                 <input style="width: 20px;" type="checkbox" name="heating" id="heating" value="1" <?php if(@$detail['b_heating'] == 1) { echo 'checked="yes"'; } ?>/> <label style="float:none;" for="heating"><?php _e('Heating', 'realstate_attributes'); ?></label>
             </li>
             <?php
-                if( Session::newInstance()->_getForm('pre_airCondition') != '' ) {
-                    $detail['b_air_condition'] = Session::newInstance()->_getForm('pre_airCondition');
+                if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_airCondition') != '' ) {
+                    $detail['b_air_condition'] = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_airCondition');
                 }
             ?>
             <li>
                 <input style="width: 20px;" type="checkbox" name="airCondition" id="airCondition" value="1" <?php if(@$detail['b_air_condition'] == 1) { echo 'checked="yes"'; } ?>/> <label style="float:none;" for="airCondition"><?php _e('Air condition', 'realstate_attributes'); ?></label>
             </li>
             <?php
-                if( Session::newInstance()->_getForm('pre_elevator') != '' ) {
-                    $detail['b_elevator'] = Session::newInstance()->_getForm('pre_elevator');
+                if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_elevator') != '' ) {
+                    $detail['b_elevator'] = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_elevator');
                 }
             ?>
             <li>
                 <input style="width: 20px;" type="checkbox" name="elevator" id="elevator" value="1" <?php if(@$detail['b_elevator'] == 1) { echo 'checked="yes"'; } ?>/> <label style="float:none;" for="elevator"><?php _e('Elevator', 'realstate_attributes'); ?></label>
             </li>
             <?php
-                if( Session::newInstance()->_getForm('pre_terrace') != '' ) {
-                    $detail['b_terrace'] = Session::newInstance()->_getForm('pre_terrace');
+                if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_terrace') != '' ) {
+                    $detail['b_terrace'] = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_terrace');
                 }
             ?>
             <li>
                 <input style="width: 20px;" type="checkbox" name="terrace" id="terrace" value="1" <?php if(@$detail['b_terrace'] == 1) { echo 'checked="yes"'; } ?>/> <label style="float:none;" for="terrace"><?php _e('Terrace', 'realstate_attributes'); ?></label>
             </li>
             <?php
-                if( Session::newInstance()->_getForm('pre_parking') != '' ) {
-                    $detail['b_parking'] = Session::newInstance()->_getForm('pre_parking');
+                if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_parking') != '' ) {
+                    $detail['b_parking'] = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_parking');
                 }
             ?>
             <li>
                 <input style="width: 20px;" type="checkbox" name="parking" id="parking" value="1" <?php if(@$detail['b_parking'] == 1) { echo 'checked="yes"'; } ?>/> <label style="float:none;" for="parking"><?php _e('Parking', 'realstate_attributes'); ?></label>
             </li>
             <?php
-                if( Session::newInstance()->_getForm('pre_furnished') != '' ) {
-                    $detail['b_furnished'] = Session::newInstance()->_getForm('pre_furnished');
+                if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_furnished') != '' ) {
+                    $detail['b_furnished'] = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_furnished');
                 }
             ?>
             <li>
                 <input style="width: 20px;" type="checkbox" name="furnished" id="furnished" value="1" <?php if(@$detail['b_furnished'] == 1) { echo 'checked="yes"'; } ?>/> <label style="float:none;" for="furnished"><?php _e('Furnished', 'realstate_attributes'); ?></label>
             </li>
             <?php
-                if( Session::newInstance()->_getForm('pre_new') != '' ) {
-                    $detail['b_new'] = Session::newInstance()->_getForm('pre_new');
+                if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_new') != '' ) {
+                    $detail['b_new'] = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_new');
                 }
             ?>
             <li>
                 <input style="width: 20px;" type="checkbox" name="new" id="new" value="1" <?php if(@$detail['b_new'] == 1) { echo 'checked="yes"'; } ?>/> <label style="float:none;" for="new"><?php _e('New', 'realstate_attributes'); ?></label>
             </li>
             <?php
-                if( Session::newInstance()->_getForm('pre_by_owner') != '' ) {
-                    $detail['b_by_owner'] = Session::newInstance()->_getForm('pre_by_owner');
+                if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_by_owner') != '' ) {
+                    $detail['b_by_owner'] = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_by_owner');
                 }
             ?>
             <li>
@@ -252,8 +252,8 @@
 
     <div class="row">
         <?php
-            if( Session::newInstance()->_getForm('pre_'.$locales[0]['pk_c_code'].'transport') != '' ) {
-                $detail['locale'][$locales[0]['pk_c_code']]['s_transport'] = Session::newInstance()->_getForm('pre_'.$locales[0]['pk_c_code'].'transport');
+            if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_'.$locales[0]['pk_c_code'].'transport') != '' ) {
+                $detail['locale'][$locales[0]['pk_c_code']]['s_transport'] = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_'.$locales[0]['pk_c_code'].'transport');
             }
         ?>
         <label for="transport"><?php _e('Transport', 'realstate_attributes'); ?></label><br />
@@ -261,8 +261,8 @@
     </div>
     <div class="row">
         <?php
-            if( Session::newInstance()->_getForm('pre_'.$locales[0]['pk_c_code'].'zone') != '' ) {
-                $detail['locale'][$locales[0]['pk_c_code']]['s_zone'] = Session::newInstance()->_getForm('pre_'.$locales[0]['pk_c_code'].'zone');
+            if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_'.$locales[0]['pk_c_code'].'zone') != '' ) {
+                $detail['locale'][$locales[0]['pk_c_code']]['s_zone'] = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_'.$locales[0]['pk_c_code'].'zone');
             }
         ?>
         <label for="zone"><?php _e('Zone', 'realstate_attributes'); ?></label><br />
@@ -277,8 +277,8 @@
             <h2><?php echo $locale['s_name']; ?></h2>
             <p>
                 <?php
-                    if( Session::newInstance()->_getForm('pre_'.$locale['pk_c_code'].'transport') != '' ) {
-                        $detail['locale'][$locale['pk_c_code']]['s_transport'] = Session::newInstance()->_getForm('pre_'.$locale['pk_c_code'].'transport');
+                    if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_'.$locale['pk_c_code'].'transport') != '' ) {
+                        $detail['locale'][$locale['pk_c_code']]['s_transport'] = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_'.$locale['pk_c_code'].'transport');
                     }
                 ?>
                 <label for="transport"><?php _e('Transport', 'realstate_attributes'); ?></label><br />
@@ -286,8 +286,8 @@
             </p>
             <p>
                 <?php
-                    if( Session::newInstance()->_getForm('pre_'.$locale['pk_c_code'].'zone') != '' ) {
-                        $detail['locale'][$locale['pk_c_code']]['s_zone'] = Session::newInstance()->_getForm('pre_'.$locale['pk_c_code'].'zone');
+                    if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_'.$locale['pk_c_code'].'zone') != '' ) {
+                        $detail['locale'][$locale['pk_c_code']]['s_zone'] = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pre_'.$locale['pk_c_code'].'zone');
                     }
                 ?>
                 <label for="zone"><?php _e('Zone', 'realstate_attributes'); ?></label><br />

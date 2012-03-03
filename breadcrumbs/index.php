@@ -1,38 +1,22 @@
 <?php
-/*
- *      OSCLass – software for creating and publishing online classified
- *                           advertising platforms
- *
- *                        Copyright (C) 2010 OSCLASS
- *
- *       This program is free software: you can redistribute it and/or
- *     modify it under the terms of the GNU Affero General Public License
- *     as published by the Free Software Foundation, either version 3 of
- *            the License, or (at your option) any later version.
- *
- *     This program is distributed in the hope that it will be useful, but
- *         WITHOUT ANY WARRANTY; without even the implied warranty of
- *        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *             GNU Affero General Public License for more details.
- *
- *      You should have received a copy of the GNU Affero General Public
- * License along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
 
-/*
-Plugin Name: Bread crumbs
-Plugin URI: http://www.opensourceclassifieds.org/
-Description: Breadcrumbs navigation system.
-Version: 1.6.3
-Author: OpenSourceClassifieds
-Author URI: http://www.opensourceclassifieds.org/
-Short Name: breadcrumbs
-*/
+function getPluginInfo_breadcrumbs()
+{
+	return array(
+		'name' => 'Breadcrumbs',
+		'description' => 'Breadcrumbs navigation',
+		'main_url' => 'http://www.opensourceclassifieds.org',
+		'update_url' => 'http://update.opensourceclassifieds.org/plugins/',
+		'version' => '',
+		'author_name' => 'OpenSourceClassifieds',
+		'author_url' => 'http://www.opensourceclassifieds.org'
+	);
+}
 
     function breadcrumbs($separator = '/') {
         $text       = '';
-        $location   = Rewrite::newInstance()->get_location();
-        $section    = Rewrite::newInstance()->get_section();
+        $location   = ClassLoader::getInstance()->getClassInstance( 'Rewrite' )->get_location();
+        $section    = ClassLoader::getInstance()->getClassInstance( 'Rewrite' )->get_section();
         $separator  = ' ' . trim($separator) . ' ';
         $page_title = '<a href="' . osc_base_url() .  '"><span class="bc_root">' . osc_page_title() . '</span></a>';
 
@@ -218,19 +202,4 @@ Short Name: breadcrumbs
     osc_add_hook(osc_plugin_path(__FILE__) . '_uninstall', '');
     // Add the help to the menu
     osc_add_hook('admin_menu', 'breadcrumbs_admin_menu');
-
-?>
-function _info()
-{
-	return array(
-		'name' => '',
-		'description' => '',
-		'main_url' => 'http://www.opensourceclassifieds.org',
-		'update_url' => 'http://update.opensourceclassifieds.org/plugins/',
-		'version' => '',
-		'author_name' => 'OpenSourceClassifieds',
-		'author_url' => 'http://www.opensourceclassifieds.org'
-	);
-}
-
 

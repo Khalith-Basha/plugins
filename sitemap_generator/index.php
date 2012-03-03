@@ -1,13 +1,11 @@
 <?php
-/*
-Plugin Name: Sitemap Generator
-Plugin URI: http://www.opensourceclassifieds.org/
-Description: Sitemap Generator
-Version: 1.2
-Author: OpenSourceClassifieds
-Author URI: http://www.opensourceclassifieds.org/
-Short Name: sitemap_generator
-*/
+
+function getPluginInfo_sitemap_generator()
+{
+	return array(
+		'name' => 'Sitemap generator',
+	);
+}
 
 
 
@@ -161,19 +159,4 @@ osc_add_hook('admin_menu', 'sitemap_admin_menu');
 // CHANGE THIS LINE TO  'cron_hourly' or 'cron_daily' to modify the frequent of running it
 // REMOVE IT if you want to generate the sitemap manually
 osc_add_hook('cron_weekly', 'sitemap_generator');
-
-?>
-function _info()
-{
-	return array(
-		'name' => '',
-		'description' => '',
-		'main_url' => 'http://www.opensourceclassifieds.org',
-		'update_url' => 'http://update.opensourceclassifieds.org/plugins/',
-		'version' => '',
-		'author_name' => 'OpenSourceClassifieds',
-		'author_url' => 'http://www.opensourceclassifieds.org'
-	);
-}
-
 

@@ -6,8 +6,8 @@
     $secret = Params::getParam('secret') ;
     $json = array();
 
-    if( Session::newInstance()->_get('userId') != '' ){
-        $userId = Session::newInstance()->_get('userId');
+    if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_get('userId') != '' ){
+        $userId = ClassLoader::getInstance()->getClassInstance( 'Session' )->_get('userId');
         $user = User::newInstance()->findByPrimaryKey($userId);
     }else{
         $userId = null;

@@ -1,13 +1,14 @@
 <?php
-/*
-Plugin Name: Ads 4 OpenSourceClassifieds
-Plugin URI: http://www.opensourceclassifieds.org/
-Description: Manage your advertising strategy.
-Version: 0.9.2
-Author: OpenSourceClassifieds
-Author URI: http://www.opensourceclassifieds.org/
-Short Name: advman
-*/
+
+function getPluginInfo_advertising()
+{
+	return array(
+		'name' => 'Advertisment banners',
+		'description' => '',
+		'main_url' => 'http://www.opensourceclassifieds.org',
+	);
+}
+
 
     function ads_call_after_install() {
         // Insert here the code you want to execute after the plugin's install
@@ -101,19 +102,5 @@ Short Name: advman
     osc_add_hook(osc_plugin_path(__FILE__)."_uninstall", 'ads_call_after_uninstall');
 
     osc_add_hook('admin_menu', 'ads_admin_menu');
-
-?>
-function _info()
-{
-	return array(
-		'name' => '',
-		'description' => '',
-		'main_url' => 'http://www.opensourceclassifieds.org',
-		'update_url' => 'http://update.opensourceclassifieds.org/plugins/',
-		'version' => '',
-		'author_name' => 'OpenSourceClassifieds',
-		'author_url' => 'http://www.opensourceclassifieds.org'
-	);
-}
 
 

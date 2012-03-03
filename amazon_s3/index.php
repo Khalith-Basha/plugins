@@ -1,17 +1,23 @@
 <?php
-/*
-Plugin Name: Amazon S3
-Plugin URI: http://www.opensourceclassifieds.org/
-Description: This plugin allows you to upload users' images to Amazon S3 service
-Version: 1.0
-Author: OpenSourceClassifieds
-Author URI: http://www.opensourceclassifieds.org/
-Short Name: amazons3
-*/
 
+function getPluginInfo_amazon_s3()
+{
+	return array(
+		'name' => 'Amazon S3',
+		'description' => 'This plugin allows you to upload users\' images to Amazon S3 service',
+		'main_url' => 'http://www.opensourceclassifieds.org',
+		'update_url' => 'http://update.opensourceclassifieds.org/plugins/',
+		'version' => '',
+		'author_name' => 'OpenSourceClassifieds',
+		'author_url' => 'http://www.opensourceclassifieds.org'
+	);
+}
 
+function initPlugin_amazon_s3()
+{
     // load necessary functions
-    require_once osc_plugins_path() . osc_plugin_folder(__FILE__) . 'S3.php';
+	require_once 'S3.php';
+}
 
     function amazon_install() {
         $conn = getConnection();
@@ -111,18 +117,4 @@ Short Name: amazons3
     osc_add_hook('delete_resource', 'amazon_delete_from_bucket');
     osc_add_hook('admin_menu', 'amazon_admin_menu');
     
-?>
-function _info()
-{
-	return array(
-		'name' => '',
-		'description' => '',
-		'main_url' => 'http://www.opensourceclassifieds.org',
-		'update_url' => 'http://update.opensourceclassifieds.org/plugins/',
-		'version' => '',
-		'author_name' => 'OpenSourceClassifieds',
-		'author_url' => 'http://www.opensourceclassifieds.org'
-	);
-}
-
 

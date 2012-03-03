@@ -1,13 +1,16 @@
 <?php
-/*
-Plugin Name: Social bookmarks
-Plugin URI: http://www.opensourceclassifieds.org/
-Description: Social bookmarks for item detail page
-Version: 1.0
-Author: OpenSourceClassifieds
-Author URI: http://www.opensourceclassifieds.org/
-Short Name: social-bookmarks
-*/
+
+function getPluginInfo_social_bookmarks()
+{
+	return array(
+		'name' => 'Social bookmarks',
+		'description' => 'Adds social bookmarks links',
+		'main_url' => 'http://www.opensourceclassifieds.org',
+		'update_url' => 'http://update.opensourceclassifieds.org/plugins/',
+		'author_name' => 'OpenSourceClassifieds',
+		'author_url' => 'http://www.opensourceclassifieds.org'
+	);
+}
 
     function social_bookmarks($content) {
         $content .= '<div class="social-bookmarks">' ;
@@ -26,8 +29,8 @@ Short Name: social-bookmarks
     }
     
     function social_bookmarks_header( ) {
-        $location   = Rewrite::newInstance()->get_location() ;
-        $section    = Rewrite::newInstance()->get_section() ;
+        $location   = ClassLoader::getInstance()->getClassInstance( 'Rewrite' )->get_location() ;
+        $section    = ClassLoader::getInstance()->getClassInstance( 'Rewrite' )->get_section() ;
         
         if($location == 'item' && $section == '') {
             echo '
@@ -47,19 +50,4 @@ Short Name: social-bookmarks
 
     osc_add_filter('item_description', 'social_bookmarks');
     osc_add_hook('header', 'social_bookmarks_header');
-    
-?>
-function _info()
-{
-	return array(
-		'name' => '',
-		'description' => '',
-		'main_url' => 'http://www.opensourceclassifieds.org',
-		'update_url' => 'http://update.opensourceclassifieds.org/plugins/',
-		'version' => '',
-		'author_name' => 'OpenSourceClassifieds',
-		'author_url' => 'http://www.opensourceclassifieds.org'
-	);
-}
-
 

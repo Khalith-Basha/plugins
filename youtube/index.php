@@ -1,22 +1,17 @@
 <?php
-/*
-Plugin Name: Embed Youtube videos
-Plugin URI: http://www.opensourceclassifieds.org/
-Description: This plugin extends the item to embed youtube videos.
-Version: 1.0
-Author: OpenSourceClassifieds
-Author URI: http://www.opensourceclassifieds.org/
-Short Name: youtube
-Plugin update URI: 
-*/
 
+function getPluginInfo_youtube()
+{
+	return array(
+		'name' => 'YouTube',
+		'description' => 'Embed YouTube videos',
+	);
+}
+
+function initPlugin_youtube()
+{
     define( 'YOUTUBE_PATH', dirname( __FILE__) . '/' ) ;
     define( 'YOUTUBE_TABLE', DB_TABLE_PREFIX . 't_item_youtube' ) ;
-
-    // use old functions if version is previous to 2.3
-    if ( version_compare( OSCLASS_VERSION, '2.3', '<' ) ) {
-        require_once( YOUTUBE_PATH . 'youtube-old.php' ) ;
-    }
 
     if( !function_exists( 'youtube_call_after_install' ) ) {
         function youtube_call_after_install() {
@@ -39,6 +34,7 @@ Plugin update URI:
             $comm->query( sprintf( 'DROP TABLE %s', YOUTUBE_TABLE ) ) ;
         }
     }
+}
 
     function youtube_form($catID = null) {
         require_once( YOUTUBE_PATH . 'item_form.php' ) ;
@@ -170,5 +166,3 @@ Plugin update URI:
     // delete youtube video of the deleted item
     osc_add_hook( 'delete_item', 'youtube_delete_item' ) ;
 
-    /* file end: ./youtube/index.php */
-?>

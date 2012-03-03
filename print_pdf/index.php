@@ -1,13 +1,18 @@
 <?php
-/*
-Plugin Name: Print PDF
-Plugin URI: http://www.opensourceclassifieds.org/
-Description: Create a PDF ready to print and share offline
-Version: 1.0.2
-Author: OpenSourceClassifieds
-Author URI: http://www.opensourceclassifieds.org/
-Short Name: printpdf
-*/
+
+function getPluginInfo_print_pdf()
+{
+	return array(
+		'name' => 'Print PDF',
+		'description' => 'Creates a PDF of the current page, ready to print and share',
+		'main_url' => 'http://www.opensourceclassifieds.org',
+		'update_url' => 'http://update.opensourceclassifieds.org/plugins/',
+		'version' => '',
+		'author_name' => 'OpenSourceClassifieds',
+		'author_url' => 'http://www.opensourceclassifieds.org'
+	);
+}
+
 
 
     function printpdf_install() {
@@ -87,18 +92,4 @@ Short Name: printpdf
     // FANCY MENU
     osc_add_hook('admin_menu', 'printpdf_admin_menu');
     
-?>
-function _info()
-{
-	return array(
-		'name' => '',
-		'description' => '',
-		'main_url' => 'http://www.opensourceclassifieds.org',
-		'update_url' => 'http://update.opensourceclassifieds.org/plugins/',
-		'version' => '',
-		'author_name' => 'OpenSourceClassifieds',
-		'author_url' => 'http://www.opensourceclassifieds.org'
-	);
-}
-
 

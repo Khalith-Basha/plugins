@@ -1,14 +1,12 @@
 <?php
-/*
-  Plugin Name: Real state attributes
-  Plugin URI: http://www.opensourceclassifieds.org/
-  Description: This plugin extends a category of items to store real estate attributes such as square feets, number of bathrooms, garage, and so on.
-  Version: 2.1.3
-  Author: OpenSourceClassifieds
-  Author URI: http://www.opensourceclassifieds.org/
-  Short Name: realstate_plugin
-  Plugin update URI: http://www.opensourceclassifieds.org/files/plugins/realstate_attributes/update.php
- */
+
+function getPluginInfo_realestate_attributes()
+{
+	return array(
+		'name' => 'Real estate attributes',
+		'description' => 'This plugin extends a category of items to store real estate attributes such as square feets, number of bathrooms, garage, and so on',
+	);
+}
 
 // Adds some plugin-specific search conditions
 function realstate_search_conditions($params = null) {
@@ -385,60 +383,60 @@ function realstate_pre_item_post() {
     $new            = (Params::getParam('new')!='') ? 1 : 0;
     $by_owner       = (Params::getParam('by_owner')!='') ? 1 : 0;
 
-    Session::newInstance()->_setForm('pre_squareMeters'      , Params::getParam('squareMeters') );
-    Session::newInstance()->_setForm('pre_numRooms'          , Params::getParam('numRooms') );
-    Session::newInstance()->_setForm('pre_numBathrooms'      , Params::getParam('numBathrooms') );
-    Session::newInstance()->_setForm('pre_property_type'     , Params::getParam('property_type') );
-    Session::newInstance()->_setForm('pre_p_type'            , Params::getParam('p_type') );
-    Session::newInstance()->_setForm('pre_status'            , Params::getParam('status') );
-    Session::newInstance()->_setForm('pre_numFloors'         , Params::getParam('numFloors') );
-    Session::newInstance()->_setForm('pre_numGarages'        , Params::getParam('numGarages') );
-    Session::newInstance()->_setForm('pre_heating'           , $heating );
-    Session::newInstance()->_setForm('pre_airCondition'      , $airCondition );
-    Session::newInstance()->_setForm('pre_elevator'          , $elevator );
-    Session::newInstance()->_setForm('pre_terrace'           , $terrace );
-    Session::newInstance()->_setForm('pre_parking'           , $parking );
-    Session::newInstance()->_setForm('pre_furnished'         , $furnished );
-    Session::newInstance()->_setForm('pre_new'               , $new );
-    Session::newInstance()->_setForm('pre_by_owner'          , $by_owner );
-    Session::newInstance()->_setForm('pre_condition'         , Params::getParam('condition') );
-    Session::newInstance()->_setForm('pre_year'              , Params::getParam('year') );
-    Session::newInstance()->_setForm('pre_agency'            , Params::getParam('agency') );
-    Session::newInstance()->_setForm('pre_floorNumber'       , Params::getParam('floorNumber') );
-    Session::newInstance()->_setForm('pre_squareMetersTotal' , Params::getParam('squareMetersTotal') );
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_setForm('pre_squareMeters'      , Params::getParam('squareMeters') );
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_setForm('pre_numRooms'          , Params::getParam('numRooms') );
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_setForm('pre_numBathrooms'      , Params::getParam('numBathrooms') );
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_setForm('pre_property_type'     , Params::getParam('property_type') );
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_setForm('pre_p_type'            , Params::getParam('p_type') );
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_setForm('pre_status'            , Params::getParam('status') );
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_setForm('pre_numFloors'         , Params::getParam('numFloors') );
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_setForm('pre_numGarages'        , Params::getParam('numGarages') );
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_setForm('pre_heating'           , $heating );
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_setForm('pre_airCondition'      , $airCondition );
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_setForm('pre_elevator'          , $elevator );
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_setForm('pre_terrace'           , $terrace );
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_setForm('pre_parking'           , $parking );
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_setForm('pre_furnished'         , $furnished );
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_setForm('pre_new'               , $new );
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_setForm('pre_by_owner'          , $by_owner );
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_setForm('pre_condition'         , Params::getParam('condition') );
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_setForm('pre_year'              , Params::getParam('year') );
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_setForm('pre_agency'            , Params::getParam('agency') );
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_setForm('pre_floorNumber'       , Params::getParam('floorNumber') );
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_setForm('pre_squareMetersTotal' , Params::getParam('squareMetersTotal') );
 
     $locales = osc_get_locales();
     foreach($locales as $locale) {
-        Session::newInstance()->_setForm('pre_'.$locale['pk_c_code'].'transport' , Params::getParam($locale['pk_c_code'].'#transport') );
-        Session::newInstance()->_setForm('pre_'.$locale['pk_c_code'].'zone' , Params::getParam($locale['pk_c_code'].'#zone') );
-        Session::newInstance()->_keepForm('pre_'.$locale['pk_c_code'].'transport');
-        Session::newInstance()->_keepForm('pre_'.$locale['pk_c_code'].'zone');
+        ClassLoader::getInstance()->getClassInstance( 'Session' )->_setForm('pre_'.$locale['pk_c_code'].'transport' , Params::getParam($locale['pk_c_code'].'#transport') );
+        ClassLoader::getInstance()->getClassInstance( 'Session' )->_setForm('pre_'.$locale['pk_c_code'].'zone' , Params::getParam($locale['pk_c_code'].'#zone') );
+        ClassLoader::getInstance()->getClassInstance( 'Session' )->_keepForm('pre_'.$locale['pk_c_code'].'transport');
+        ClassLoader::getInstance()->getClassInstance( 'Session' )->_keepForm('pre_'.$locale['pk_c_code'].'zone');
     }
 
 
     // keep values on session
-    Session::newInstance()->_keepForm('pre_squareMeters');
-    Session::newInstance()->_keepForm('pre_numRooms');
-    Session::newInstance()->_keepForm('pre_numBathrooms');
-    Session::newInstance()->_keepForm('pre_property_type');
-    Session::newInstance()->_keepForm('pre_p_type');
-    Session::newInstance()->_keepForm('pre_status');
-    Session::newInstance()->_keepForm('pre_numFloors');
-    Session::newInstance()->_keepForm('pre_numGarages');
-    Session::newInstance()->_keepForm('pre_heating');
-    Session::newInstance()->_keepForm('pre_airCondition');
-    Session::newInstance()->_keepForm('pre_elevator');
-    Session::newInstance()->_keepForm('pre_terrace');
-    Session::newInstance()->_keepForm('pre_parking');
-    Session::newInstance()->_keepForm('pre_furnished');
-    Session::newInstance()->_keepForm('pre_new');
-    Session::newInstance()->_keepForm('pre_by_owner');
-    Session::newInstance()->_keepForm('pre_condition');
-    Session::newInstance()->_keepForm('pre_year');
-    Session::newInstance()->_keepForm('pre_agency');
-    Session::newInstance()->_keepForm('pre_floorNumber');
-    Session::newInstance()->_keepForm('pre_floorNumber');
-    Session::newInstance()->_keepForm('pre_squareMetersTotal');
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_keepForm('pre_squareMeters');
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_keepForm('pre_numRooms');
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_keepForm('pre_numBathrooms');
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_keepForm('pre_property_type');
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_keepForm('pre_p_type');
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_keepForm('pre_status');
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_keepForm('pre_numFloors');
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_keepForm('pre_numGarages');
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_keepForm('pre_heating');
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_keepForm('pre_airCondition');
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_keepForm('pre_elevator');
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_keepForm('pre_terrace');
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_keepForm('pre_parking');
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_keepForm('pre_furnished');
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_keepForm('pre_new');
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_keepForm('pre_by_owner');
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_keepForm('pre_condition');
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_keepForm('pre_year');
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_keepForm('pre_agency');
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_keepForm('pre_floorNumber');
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_keepForm('pre_floorNumber');
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_keepForm('pre_squareMetersTotal');
 }
 
 // This is needed in order to be able to activate the plugin
@@ -475,4 +473,3 @@ osc_add_hook('delete_item', 'realstate_delete_item');
 
 // previous to insert item
 osc_add_hook('pre_item_post', 'realstate_pre_item_post') ;
-?>

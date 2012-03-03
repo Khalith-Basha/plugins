@@ -1,14 +1,12 @@
 <?php
-/*
-Plugin Name: Jobs attributes
-Plugin URI: http://www.opensourceclassifieds.org/
-Description: This plugin extends a category of items to store jobs attributes such as salary, requirements, timetable, and so on.
-Version: 2.2.1
-Author: OpenSourceClassifieds
-Author URI: http://www.opensourceclassifieds.org/
-Short Name: jobs_plugin
-Plugin update URI: http://www.opensourceclassifieds.org/files/plugins/jobs_attributes/update.php
-*/
+
+function getPluginInfo_jobs_attributes()
+{
+	return array(
+		'name' => 'Jobs attributes',
+		'description' => 'Extends a category of items to store jobs attributes such as salary, requirements, timetable, and so on',
+	);
+}
 
 // Adds some plugin-specific search conditions
 function job_search_conditions($params = '') {
@@ -123,7 +121,7 @@ function job_form($catId = null) {
             require_once 'item_edit.php';
         }
     }
-    Session::newInstance()->_clearVariables();
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_clearVariables();
 }
 
 function job_search_form($catId = null) {
@@ -228,7 +226,7 @@ function job_item_edit($catId = null, $item_id = null) {
         }
         require_once 'item_edit.php';
     }
-    Session::newInstance()->_clearVariables();
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_clearVariables();
 }
 
 function job_item_edit_post($catId = null, $item_id = null) {
@@ -307,12 +305,12 @@ function job_pre_item_post()
     $salaryMin   = $matches[0];
     $salaryMax   = preg_match('/(\d*)/', $salaryMax, $matches);
     $salaryMax   = $matches[0];
-    Session::newInstance()->_setForm('pj_salaryMin', $salaryMin );
-    Session::newInstance()->_setForm('pj_salaryMax', $salaryMax );
-    Session::newInstance()->_setForm('pj_relation',  Params::getParam('relation') );
-    Session::newInstance()->_setForm('pj_companyName',  Params::getParam('companyName') );
-    Session::newInstance()->_setForm('pj_positionType',  Params::getParam('positionType') );
-    Session::newInstance()->_setForm('pj_salaryPeriod',  Params::getParam('salaryPeriod') );
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_setForm('pj_salaryMin', $salaryMin );
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_setForm('pj_salaryMax', $salaryMax );
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_setForm('pj_relation',  Params::getParam('relation') );
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_setForm('pj_companyName',  Params::getParam('companyName') );
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_setForm('pj_positionType',  Params::getParam('positionType') );
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_setForm('pj_salaryPeriod',  Params::getParam('salaryPeriod') );
     // prepare locales
     $dataItem = array();
     $request = Params::getParamsAsArray();
@@ -321,27 +319,27 @@ function job_pre_item_post()
             $dataItem[$m[1]][$m[2]] = $v;
         }
     }
-    Session::newInstance()->_setForm('pj_data', $dataItem );
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_setForm('pj_data', $dataItem );
 
     // keep values on session
-    Session::newInstance()->_keepForm('pj_salaryMin');
-    Session::newInstance()->_keepForm('pj_salaryMax');
-    Session::newInstance()->_keepForm('pj_relation');
-    Session::newInstance()->_keepForm('pj_companyName');
-    Session::newInstance()->_keepForm('pj_positionType');
-    Session::newInstance()->_keepForm('pj_salaryPeriod');
-    Session::newInstance()->_keepForm('pj_data');
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_keepForm('pj_salaryMin');
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_keepForm('pj_salaryMax');
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_keepForm('pj_relation');
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_keepForm('pj_companyName');
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_keepForm('pj_positionType');
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_keepForm('pj_salaryPeriod');
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_keepForm('pj_data');
 }
 
 function job_save_inputs_into_session()
 {
-    Session::newInstance()->_keepForm('pj_salaryMin');
-    Session::newInstance()->_keepForm('pj_salaryMax');
-    Session::newInstance()->_keepForm('pj_relation');
-    Session::newInstance()->_keepForm('pj_companyName');
-    Session::newInstance()->_keepForm('pj_positionType');
-    Session::newInstance()->_keepForm('pj_salaryPeriod');
-    Session::newInstance()->_keepForm('pj_data');
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_keepForm('pj_salaryMin');
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_keepForm('pj_salaryMax');
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_keepForm('pj_relation');
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_keepForm('pj_companyName');
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_keepForm('pj_positionType');
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_keepForm('pj_salaryPeriod');
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_keepForm('pj_data');
 }
 
 // This is needed in order to be able to activate the plugin

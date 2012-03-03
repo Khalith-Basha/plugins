@@ -1,30 +1,17 @@
 <?php
-/*
-Plugin Name: Facebook Connect
-Plugin URI: http://www.opensourceclassifieds.org/
-Description: Use Facebook to connect and log in your users accounts
-Version: 1.0
-Author: OpenSourceClassifieds
-Author URI: http://www.opensourceclassifieds.org/
-Short Name: facebook
-*/
 
-    /**
-     * OpenSourceClassifieds – software for creating and publishing online classified advertising platforms
-     *
-     * Copyright (C) 2010 OSCLASS
-     *
-     * This program is free software: you can redistribute it and/or modify it under the terms
-     * of the GNU Affero General Public License as published by the Free Software Foundation,
-     * either version 3 of the License, or (at your option) any later version.
-     *
-     * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
-     * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-     * See the GNU Affero General Public License for more details.
-     *
-     * You should have received a copy of the GNU Affero General Public
-     * License along with this program. If not, see <http://www.gnu.org/licenses/>.
-     */
+function getPluginInfo_facebook_connect()
+{
+	return array(
+		'name' => 'Facebook Connect',
+		'description' => 'Integrates the registration system with Facebook Connect',
+		'main_url' => 'http://www.opensourceclassifieds.org',
+		'update_url' => 'http://update.opensourceclassifieds.org/plugins/',
+		'author_name' => 'OpenSourceClassifieds',
+		'author_url' => 'http://www.opensourceclassifieds.org'
+	);
+}
+
 
     require_once dirname( __FILE__ ) . '/OSCFacebook.php' ;
 
@@ -83,20 +70,5 @@ Short Name: facebook
 
     osc_add_hook( 'before_html', 'fbc_init' ) ;
     osc_add_hook( 'delete_user', 'fbc_delete_user' ) ;
-
-    /* file end: ./oc-content/plugins/facebook/index.php */
-?>
-function _info()
-{
-	return array(
-		'name' => '',
-		'description' => '',
-		'main_url' => 'http://www.opensourceclassifieds.org',
-		'update_url' => 'http://update.opensourceclassifieds.org/plugins/',
-		'version' => '',
-		'author_name' => 'OpenSourceClassifieds',
-		'author_url' => 'http://www.opensourceclassifieds.org'
-	);
-}
 
 

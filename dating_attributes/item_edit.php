@@ -3,8 +3,8 @@
     <tr>
         <td><?php _e('You are', 'dating_attributes'); ?>:</td>
         <?php
-            if( Session::newInstance()->_getForm('pd_genderFrom') != '' ) {
-                $detail['e_gender_from'] = Session::newInstance()->_getForm('pd_genderFrom');
+            if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pd_genderFrom') != '' ) {
+                $detail['e_gender_from'] = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pd_genderFrom');
             }
         ?>
         <td>
@@ -16,8 +16,8 @@
     <tr>
         <td><?php _e('Looking for', 'dating_attributes'); ?>:</td>
         <?php
-            if( Session::newInstance()->_getForm('pd_genderTo') != '' ) {
-                $detail['e_gender_to'] = Session::newInstance()->_getForm('pd_genderTo');
+            if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pd_genderTo') != '' ) {
+                $detail['e_gender_to'] = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pd_genderTo');
             }
         ?>
         <td>
@@ -29,8 +29,8 @@
     <tr>
         <td><?php _e('Relation type', 'dating_attributes'); ?>:</td>
         <?php
-            if( Session::newInstance()->_getForm('pd_relation') != '' ) {
-                $detail['e_relation'] = Session::newInstance()->_getForm('pd_relation');
+            if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pd_relation') != '' ) {
+                $detail['e_relation'] = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pd_relation');
             }
         ?>
         <td>

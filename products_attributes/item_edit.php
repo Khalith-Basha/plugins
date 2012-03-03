@@ -2,8 +2,8 @@
 <table>
     <tr>
         <?php
-            if( Session::newInstance()->_getForm('pp_make') != '' ) {
-                $detail['s_make'] = Session::newInstance()->_getForm('pp_make');
+            if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pp_make') != '' ) {
+                $detail['s_make'] = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pp_make');
             }
         ?>
         <td><label for="make"><?php _e('Make', 'products_attributes'); ?></label></td>
@@ -11,8 +11,8 @@
     </tr>
     <tr>
         <?php
-            if( Session::newInstance()->_getForm('pp_model') != '' ) {
-                $detail['s_model'] = Session::newInstance()->_getForm('pp_model');
+            if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pp_model') != '' ) {
+                $detail['s_model'] = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pp_model');
             }
         ?>
         <td><label for="model"><?php _e('Model', 'products_attributes'); ?></label></td>

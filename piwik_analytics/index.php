@@ -1,13 +1,17 @@
 <?php
-/*
-Plugin Name: Piwik Web Analytics
-Plugin URI: http://www.opensourceclassifieds.org/
-Description: Enable Piwik Web Analytics
-Version: 0.9
-Author: OpenSourceClassifieds
-Author URI: http://www.opensourceclassifieds.org/
-Short Name: piwik
-*/
+
+function getPluginInfo_piwik_analytics()
+{
+	return array(
+		'name' => 'Piwiki Web analytics',
+		'main_url' => 'http://www.opensourceclassifieds.org',
+		'update_url' => 'http://update.opensourceclassifieds.org/plugins/',
+		'version' => '',
+		'author_name' => 'OpenSourceClassifieds',
+		'author_url' => 'http://www.opensourceclassifieds.org'
+	);
+}
+
 
 
     function piwik_install() {
@@ -39,18 +43,3 @@ Short Name: piwik
     osc_add_hook('admin_menu', 'piwik_admin_menu');
     osc_add_hook('footer', 'piwik_footer');
     
-?>
-function _info()
-{
-	return array(
-		'name' => '',
-		'description' => '',
-		'main_url' => 'http://www.opensourceclassifieds.org',
-		'update_url' => 'http://update.opensourceclassifieds.org/plugins/',
-		'version' => '',
-		'author_name' => 'OpenSourceClassifieds',
-		'author_url' => 'http://www.opensourceclassifieds.org'
-	);
-}
-
-

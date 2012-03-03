@@ -1,10 +1,10 @@
 <script type="text/javascript">
     <?php
-        if( Session::newInstance()->_getForm('pj_salaryMin') != "" ) {
-            $detail['i_salary_min'] = Session::newInstance()->_getForm('pj_salaryMin');
+        if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pj_salaryMin') != "" ) {
+            $detail['i_salary_min'] = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pj_salaryMin');
         }
-        if( Session::newInstance()->_getForm('pj_salaryMax') != "" ) {
-            $detail['i_salary_max'] = Session::newInstance()->_getForm('pj_salaryMax');
+        if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pj_salaryMax') != "" ) {
+            $detail['i_salary_max'] = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pj_salaryMax');
         }
     ?>
     $(document).ready(function(){
@@ -40,8 +40,8 @@
     </div>
     <div class="row _20">
         <?php
-            if( Session::newInstance()->_getForm('pj_relation') != "" ) {
-                $detail['e_relation'] = Session::newInstance()->_getForm('pj_relation');
+            if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pj_relation') != "" ) {
+                $detail['e_relation'] = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pj_relation');
             }
         ?>
         <label for="hire"><?php _e('Hire someone', 'jobs_attributes'); ?></label>
@@ -49,8 +49,8 @@
     </div>
     <div class="row _20">
         <?php
-            if( Session::newInstance()->_getForm('pj_relation') != "" ) {
-                $detail['e_relation'] = Session::newInstance()->_getForm('pj_relation');
+            if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pj_relation') != "" ) {
+                $detail['e_relation'] = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pj_relation');
             }
         ?>
         <label for="look"><?php _e('Looking for a job', 'jobs_attributes'); ?></label>
@@ -58,8 +58,8 @@
     </div>
     <div class="row _200">
         <?php
-            if( Session::newInstance()->_getForm('pj_companyName') != "" ) {
-                $detail['s_company_name'] = Session::newInstance()->_getForm('pj_companyName');
+            if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pj_companyName') != "" ) {
+                $detail['s_company_name'] = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pj_companyName');
             }
         ?>
         <label for="companyName"><?php _e('Company name', 'jobs_attributes'); ?></label>
@@ -67,8 +67,8 @@
     </div>
     <div class="row _200 auto">
         <?php
-            if( Session::newInstance()->_getForm('pj_positionType') != "" ) {
-                $detail['e_position_type'] = Session::newInstance()->_getForm('pj_positionType');
+            if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pj_positionType') != "" ) {
+                $detail['e_position_type'] = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pj_positionType');
             }
         ?>
         <label for="positionType"><?php _e('Position type', 'jobs_attributes'); ?></label>
@@ -80,8 +80,8 @@
     </div>
     <div style="height: 60px;" class="row _100 auto">
         <?php
-            if( Session::newInstance()->_getForm('pj_salaryPeriod') != "" ) {
-                $detail['e_salary_period'] = Session::newInstance()->_getForm('pj_salaryPeriod');
+            if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pj_salaryPeriod') != "" ) {
+                $detail['e_salary_period'] = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pj_salaryPeriod');
             }
         ?>
         <label for="salaryRange"><?php _e('Salary range', 'jobs_attributes'); ?></label>
@@ -108,8 +108,8 @@
 ?>
         <div class="row">
             <?php
-                if( Session::newInstance()->_getForm('pj_data') != "" ) {
-                    $data = Session::newInstance()->_getForm('pj_data');
+                if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pj_data') != "" ) {
+                    $data = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pj_data');
                     $detail['locale'][$locale['pk_c_code']]['s_desired_exp'] = $data[$locale['pk_c_code']]['desired_exp'];
                 }
             ?>
@@ -118,8 +118,8 @@
         </div>
         <div class="row">
             <?php
-                if( Session::newInstance()->_getForm('pj_data') != "" ) {
-                    $data = Session::newInstance()->_getForm('pj_data');
+                if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pj_data') != "" ) {
+                    $data = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pj_data');
                     $detail['locale'][$locale['pk_c_code']]['s_studies'] = $data[$locale['pk_c_code']]['studies'];
                 }
             ?>
@@ -128,8 +128,8 @@
         </div>
         <div class="row">
             <?php
-                if( Session::newInstance()->_getForm('pj_data') != "" ) {
-                    $data = Session::newInstance()->_getForm('pj_data');
+                if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pj_data') != "" ) {
+                    $data = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pj_data');
                     $detail['locale'][$locale['pk_c_code']]['s_minimum_requirements'] = $data[$locale['pk_c_code']]['min_reqs'];
                 }
             ?>
@@ -138,8 +138,8 @@
         </div>
         <div class="row">
             <?php
-                if( Session::newInstance()->_getForm('pj_data') != "" ) {
-                    $data = Session::newInstance()->_getForm('pj_data');
+                if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pj_data') != "" ) {
+                    $data = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pj_data');
                     $detail['locale'][$locale['pk_c_code']]['s_desired_requirements'] = $data[$locale['pk_c_code']]['desired_reqs'];
                 }
             ?>
@@ -148,8 +148,8 @@
         </div>
         <div class="row">
             <?php
-                if( Session::newInstance()->_getForm('pj_data') != "" ) {
-                    $data = Session::newInstance()->_getForm('pj_data');
+                if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pj_data') != "" ) {
+                    $data = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pj_data');
                     $detail['locale'][$locale['pk_c_code']]['s_contract'] = $data[$locale['pk_c_code']]['contract'];
                 }
             ?>
@@ -158,8 +158,8 @@
         </div>
         <div class="row">
             <?php
-                if( Session::newInstance()->_getForm('pj_data') != "" ) {
-                    $data = Session::newInstance()->_getForm('pj_data');
+                if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pj_data') != "" ) {
+                    $data = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pj_data');
                     $detail['locale'][$locale['pk_c_code']]['s_company_description'] = $data[$locale['pk_c_code']]['company_desc'];
                 }
             ?>
@@ -173,8 +173,8 @@
                 <h2><?php echo $locale['s_name']; ?></h2>
                 <div class="row">
                     <?php
-                        if( Session::newInstance()->_getForm('pj_data') != "" ) {
-                            $data = Session::newInstance()->_getForm('pj_data');
+                        if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pj_data') != "" ) {
+                            $data = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pj_data');
                             $detail['locale'][$locale['pk_c_code']]['s_desired_exp'] = $data[$locale['pk_c_code']]['desired_exp'];
                         }
                     ?>
@@ -183,8 +183,8 @@
                 </div>
                 <div class="row">
                     <?php
-                        if( Session::newInstance()->_getForm('pj_data') != "" ) {
-                            $data = Session::newInstance()->_getForm('pj_data');
+                        if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pj_data') != "" ) {
+                            $data = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pj_data');
                             $detail['locale'][$locale['pk_c_code']]['s_studies'] = $data[$locale['pk_c_code']]['studies'];
                         }
                     ?>
@@ -193,8 +193,8 @@
                 </div>
                 <div class="row">
                     <?php
-                        if( Session::newInstance()->_getForm('pj_data') != "" ) {
-                            $data = Session::newInstance()->_getForm('pj_data');
+                        if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pj_data') != "" ) {
+                            $data = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pj_data');
                             $detail['locale'][$locale['pk_c_code']]['s_minimum_requirements'] = $data[$locale['pk_c_code']]['min_reqs'];
                         }
                     ?>
@@ -203,8 +203,8 @@
                 </div>
                 <div class="row">
                     <?php
-                        if( Session::newInstance()->_getForm('pj_data') != "" ) {
-                            $data = Session::newInstance()->_getForm('pj_data');
+                        if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pj_data') != "" ) {
+                            $data = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pj_data');
                             $detail['locale'][$locale['pk_c_code']]['s_desired_requirements'] = $data[$locale['pk_c_code']]['desired_reqs'];
                         }
                     ?>
@@ -213,8 +213,8 @@
                 </div>
                 <div class="row">
                     <?php
-                        if( Session::newInstance()->_getForm('pj_data') != "" ) {
-                            $data = Session::newInstance()->_getForm('pj_data');
+                        if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pj_data') != "" ) {
+                            $data = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pj_data');
                             $detail['locale'][$locale['pk_c_code']]['s_contract'] = $data[$locale['pk_c_code']]['contract'];
                         }
                     ?>
@@ -223,8 +223,8 @@
                 </div>
                 <div class="row">
                     <?php
-                        if( Session::newInstance()->_getForm('pj_data') != "" ) {
-                            $data = Session::newInstance()->_getForm('pj_data');
+                        if( ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pj_data') != "" ) {
+                            $data = ClassLoader::getInstance()->getClassInstance( 'Session' )->_getForm('pj_data');
                             $detail['locale'][$locale['pk_c_code']]['s_company_description'] = $data[$locale['pk_c_code']]['company_desc'];
                         }
                     ?>

@@ -1,13 +1,18 @@
 <?php
-/*
-Plugin Name: More edit
-Plugin URI: http://www.opensourceclassifieds.org/
-Description: More edit options
-Version: 1.0.2
-Author: OpenSourceClassifieds
-Author URI: http://www.opensourceclassifieds.org/
-Short Name: moreedit
-*/
+
+function getPluginInfo_moderation()
+{
+	return array(
+		'name' => 'Moderation',
+		'description' => '',
+		'main_url' => 'http://www.opensourceclassifieds.org',
+		'update_url' => 'http://update.opensourceclassifieds.org/plugins/',
+		'version' => '',
+		'author_name' => 'OpenSourceClassifieds',
+		'author_url' => 'http://www.opensourceclassifieds.org'
+	);
+}
+
 
 
     function moreedit_install() {
@@ -187,18 +192,3 @@ Short Name: moreedit
     osc_add_hook('post_item', 'moreedit_item_add');
     osc_add_hook('before_item_edit', 'moreedit_item_edit');
     
-?>
-function _info()
-{
-	return array(
-		'name' => '',
-		'description' => '',
-		'main_url' => 'http://www.opensourceclassifieds.org',
-		'update_url' => 'http://update.opensourceclassifieds.org/plugins/',
-		'version' => '',
-		'author_name' => 'OpenSourceClassifieds',
-		'author_url' => 'http://www.opensourceclassifieds.org'
-	);
-}
-
-

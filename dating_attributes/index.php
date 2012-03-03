@@ -1,14 +1,16 @@
 <?php
-/*
-Plugin Name: Dating attributes
-Plugin URI: http://www.opensourceclassifieds.org/
-Description: This plugin extends a category of items to store dating attributes such as gender you're looking for and the type of relation.
-Version: 2.1.2
-Author: OpenSourceClassifieds
-Author URI: http://www.opensourceclassifieds.org/
-Short Name: dating_plugin
-Plugin update URI: http://www.opensourceclassifieds.org/files/plugins/dating_attributes/update.php
-*/
+
+function getPluginInfo_dating_attributes()
+{
+	return array(
+		'name' => 'Dating attributes',
+		'description' => 'This plugin extends a category of items to store dating attributes such as gender you\'re looking for and the type of relation.',
+		'main_url' => 'http://www.opensourceclassifieds.org',
+		'update_url' => 'http://update.opensourceclassifieds.org/plugin/dating_attributes',
+		'author_name' => 'OpenSourceClassifieds',
+		'author_url' => 'http://www.opensourceclassifieds.org'
+	);
+}
 
 // Adds some plugin-specific search conditions
 function dating_search_conditions($params) {
@@ -160,13 +162,13 @@ function dating_admin_configuration() {
 
 function datting_pre_item_post() {
 
-    Session::newInstance()->_setForm('pd_genderFrom' , Params::getParam('genderFrom'));
-    Session::newInstance()->_setForm('pd_genderTo'   , Params::getParam('genderTo'));
-    Session::newInstance()->_setForm('pd_relation'   , Params::getParam('relation'));
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_setForm('pd_genderFrom' , Params::getParam('genderFrom'));
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_setForm('pd_genderTo'   , Params::getParam('genderTo'));
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_setForm('pd_relation'   , Params::getParam('relation'));
     // keep values on session
-    Session::newInstance()->_keepForm('pd_genderFrom');
-    Session::newInstance()->_keepForm('pd_genderTo');
-    Session::newInstance()->_keepForm('pd_relation');
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_keepForm('pd_genderFrom');
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_keepForm('pd_genderTo');
+    ClassLoader::getInstance()->getClassInstance( 'Session' )->_keepForm('pd_relation');
 }
 
 // This is needed in order to be able to activate the plugin
@@ -200,4 +202,3 @@ osc_add_hook('delete_item', 'dating_delete_item');
 // previous to insert item
 osc_add_hook('pre_item_post', 'datting_pre_item_post') ;
 
-?>

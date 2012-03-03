@@ -1,31 +1,19 @@
 <?php
-/**
- * OpenSourceClassifieds – software for creating and publishing online classified advertising platforms
- *
- * Copyright (C) 2010 OSCLASS
- *
- * This program is free software: you can redistribute it and/or modify it under the terms
- * of the GNU Affero General Public License as published by the Free Software Foundation,
- * either version 3 of the License, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
- * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
- * See the GNU Affero General Public License for more details.
- *
- * You should have received a copy of the GNU Affero General Public
- * License along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 
-/*
-Plugin Name: Buy/Sell type
-Plugin URI: http://www.opensourceclassifieds.org/
-Description: This plugin extends a category of items to store a buy/sell type of the offer
-Version: 1.0.2
-Author: OpenSourceClassifieds
-Author URI: http://www.opensourceclassifieds.org/
-Short Name: buysell
-*/
+function getPluginInfo_buy_sell()
+{
+	return array(
+		'name' => 'Buy/Sell',
+		'description' => 'Adds a new field to items indicating whether it is for sell or buy',
+		'main_url' => 'http://www.opensourceclassifieds.org',
+		'update_url' => 'http://update.opensourceclassifieds.org/plugins/',
+		'author_name' => 'OpenSourceClassifieds',
+		'author_url' => 'http://www.opensourceclassifieds.org'
+	);
+}
 
+function initPlugin()
+{
     $buysell_types         = array();
     // ADD your own ads' types, VALUE should be a ONE WORD UPPERCASE used as a key
     //$buysell_types['VALUE'] = __('Text to show', 'buysell');
@@ -33,6 +21,7 @@ Short Name: buysell
     $buysell_types['BUY']  = __('Buy', 'buysell');
 
     View::newInstance()->_exportVariableToView("buysell_types", $buysell_types);
+}
 
     function buysell_search_conditions($params) {
         foreach($params as $key => $value) {
@@ -160,19 +149,4 @@ Short Name: buysell
     osc_add_hook('item_edit', 'buysell_item_edit', 0);
     osc_add_hook('item_edit_post', 'buysell_item_edit_post');
     osc_add_hook('delete_item', 'buysell_delete_item');
-
-?>
-function _info()
-{
-	return array(
-		'name' => '',
-		'description' => '',
-		'main_url' => 'http://www.opensourceclassifieds.org',
-		'update_url' => 'http://update.opensourceclassifieds.org/plugins/',
-		'version' => '',
-		'author_name' => 'OpenSourceClassifieds',
-		'author_url' => 'http://www.opensourceclassifieds.org'
-	);
-}
-
 

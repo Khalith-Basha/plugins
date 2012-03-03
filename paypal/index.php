@@ -1,18 +1,24 @@
 <?php
-/*
-Plugin Name: Paypal payment
-Plugin URI: http://www.opensourceclassifieds.org/
-Description: Paypal payment options
-Version: 2.0.3
-Author: OpenSourceClassifieds
-Author URI: http://www.opensourceclassifieds.org/
-Short Name: paypal
-*/
 
+function getPluginInfo_paypal()
+{
+	return array(
+		'name' => 'Paypal payments',
+		'main_url' => 'http://www.opensourceclassifieds.org',
+		'update_url' => 'http://update.opensourceclassifieds.org/plugin/paypal',
+		'version' => '1.0',
+		'author_name' => 'OpenSourceClassifieds',
+		'author_url' => 'http://www.opensourceclassifieds.org'
+	);
+}
+
+function initPlugin_paypal()
+{
     define('PAYPAL_CRYPT_KEY', 'randompasswordchangethis');
 
     // load necessary functions
     require_once osc_plugins_path() . osc_plugin_folder(__FILE__) . 'functions.php';
+}
 
     /**
     * Create tables and variables on t_preference and t_pages
@@ -378,7 +384,7 @@ Short Name: paypal
             return false;
         }
         
-        if( Rewrite::newInstance()->get_location() != 'item' ) {
+        if( ClassLoader::getInstance()->getClassInstance( 'Rewrite' )->get_location() != 'item' ) {
             return false;
         }
         
@@ -512,19 +518,5 @@ Short Name: paypal
     osc_add_hook('before_item_edit', 'paypal_before_edit');
     osc_add_hook('show_item', 'paypal_show_item');
     osc_add_hook('delete_item', 'paypal_item_delete');
-?>
-
-function _info()
-{
-	return array(
-		'name' => '',
-		'description' => '',
-		'main_url' => 'http://www.opensourceclassifieds.org',
-		'update_url' => 'http://update.opensourceclassifieds.org/plugins/',
-		'version' => '',
-		'author_name' => 'OpenSourceClassifieds',
-		'author_url' => 'http://www.opensourceclassifieds.org'
-	);
-}
 
 

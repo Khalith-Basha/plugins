@@ -1,21 +1,16 @@
 <?php
-/*
-Plugin Name: Required Fields at Registration
-Plugin URI: http://www.opensourceclassifieds.org/
-Description: Require more fields at registration process
-Version: 1.0
-Author: OpenSourceClassifieds
-Author URI: http://www.opensourceclassifieds.org/
-Short Name: requiredreg
-*/
 
+function getPluginInfo_required_fields_registration()
+{
+	return array(
+		'name' => 'Required registration fields',
+	);
+}
 
-    // NO NEED TO MODIFY ANYTHING ON THIS FILE
     function requiredreg_form() {
         include_once 'form.php';
     }
 
-    // NO NEED TO MODIFY ANYTHING ON THIS FILE
     function requiredreg_save($userId) {
         $userActions = new UserActions(false);
         $input = $userActions->prepareData(false) ;
@@ -35,4 +30,3 @@ Short Name: requiredreg
     // run ONCE the user is registered
     osc_add_hook('user_register_completed', 'requiredreg_save');
     
-?>

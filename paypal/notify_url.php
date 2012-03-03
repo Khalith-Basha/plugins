@@ -101,7 +101,7 @@
                         foreach ($_REQUEST as $key => $value) {
                             $emailtext .= $key . ' = ' . $value . '\n\n';
                         }
-                        mail(osc_contact_email() , 'NOTIFY EC OSCLASS PAYPAL DEBUG', $emailtext . '\n\n' . $req);
+                        mail(osc_contact_email() , 'NOTIFY EC OSC PAYPAL DEBUG', $emailtext . '\n\n' . $req);
                     }
                 }
             } else if (strcmp($res, 'INVALID') == 0) {

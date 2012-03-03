@@ -1,13 +1,17 @@
 <?php
-/*
-Plugin Name: Voting
-Plugin URI: http://www.opensourceclassifieds.org/
-Description: Voting system
-Version: 0.1
-Author: OpenSourceClassifieds
-Author URI: http://www.opensourceclassifieds.org/
-Short Name: voting_plugin
-*/
+
+function getPluginInfo_voting()
+{
+	return array(
+		'name' => 'Voting',
+		'main_url' => 'http://www.opensourceclassifieds.org',
+		'update_url' => 'http://update.opensourceclassifieds.org/plugins/',
+		'author_name' => 'OpenSourceClassifieds',
+		'author_url' => 'http://www.opensourceclassifieds.org'
+	);
+}
+
+
 
     /**
      * Set plugin preferences 
@@ -226,19 +230,4 @@ Short Name: voting_plugin
     osc_add_hook('item_detail', 'voting_item_detail');
 
     osc_add_hook('admin_menu', 'voting_admin_menu');
-?>
-
-function _info()
-{
-	return array(
-		'name' => '',
-		'description' => '',
-		'main_url' => 'http://www.opensourceclassifieds.org',
-		'update_url' => 'http://update.opensourceclassifieds.org/plugins/',
-		'version' => '',
-		'author_name' => 'OpenSourceClassifieds',
-		'author_url' => 'http://www.opensourceclassifieds.org'
-	);
-}
-
 

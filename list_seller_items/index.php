@@ -1,34 +1,14 @@
 <?php
-/*
- *      OSCLass – software for creating and publishing online classified
- *                           advertising platforms
- *
- *                        Copyright (C) 2010 OSCLASS
- *
- *       This program is free software: you can redistribute it and/or
- *     modify it under the terms of the GNU Affero General Public License
- *     as published by the Free Software Foundation, either version 3 of
- *            the License, or (at your option) any later version.
- *
- *     This program is distributed in the hope that it will be useful, but
- *         WITHOUT ANY WARRANTY; without even the implied warranty of
- *        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *             GNU Affero General Public License for more details.
- *
- *      You should have received a copy of the GNU Affero General Public
- * License along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
 
-/*
-Plugin Name: List seller items
-Plugin URI: http://www.opensourceclassifieds.org/
-Description: Display all seller items.
-Version: 1.0.2
-Author: Richard Martin
-Author URI: http://www.proodi.ca/
-Short Name: list_seller_items
-*/
- 
+function getPluginInfo_list_seller_items()
+{
+	return array(
+		'name' => 'List seller items',
+		'author_name' => 'Richard Martin',
+		'author_url' => 'http://www.proodi.ca'
+	);
+}
+
     function seller_post() {
         if ( osc_item_user_id() == 0 ) return false ;
         

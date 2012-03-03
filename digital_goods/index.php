@@ -1,14 +1,12 @@
 <?php
-/*
-Plugin Name: Digital Goods
-Plugin URI: http://www.opensourceclassifieds.org/
-Description: This plugin allows your users to attach a digital file to their ads
-Version: 1.0
-Author: OpenSourceClassifieds
-Author URI: http://www.opensourceclassifieds.org/
-Short Name: digitalgoods
-*/
 
+function getPluginInfo_digital_goods()
+{
+	return array(
+		'name' => 'Digital good',
+		'description' => 'Allows your users to attach a digital file to their ads'
+	);
+}
 
     function digitalgoods_install() {
         $conn = getConnection();
@@ -182,4 +180,3 @@ Short Name: digitalgoods
     
     osc_add_hook('admin_menu', 'digitalgoods_admin_menu');
     
-?>

@@ -1,15 +1,17 @@
 <?php
-/*
-  Plugin Name: Watchlist
-  Plugin URI: http://www.opensourceclassifieds.org/
-  Description: This plugin add possibility for user to watch items.
-  Version: 1.0.3
-  Author: Richard Martin (keny)
-  Author URI: http://www.proodi.com
-  Author Email: keny10@gmail.com
-  Short Name: WatchList
-  Plugin update URI: http://www.opensourceclassifieds.org/
- */
+
+function getPluginInfo_watch_list()
+{
+	return array(
+		'name' => 'Watch list',
+		'description' => 'Lets user to watch favourite items',
+		'main_url' => 'http://www.opensourceclassifieds.org',
+		'update_url' => 'http://update.opensourceclassifieds.org/plugins/',
+		'author_name' => 'Richard Martin (keny)',
+		'author_url' => 'http://www.proodi.com'
+	);
+}
+
 
     define('WATCHLIST_VERSION', '1.0.3') ;
 
@@ -70,19 +72,4 @@
 
     //Delete item
     osc_add_hook('delete_item', 'watchlist_delete_item') ;
-
-?>
-function _info()
-{
-	return array(
-		'name' => '',
-		'description' => '',
-		'main_url' => 'http://www.opensourceclassifieds.org',
-		'update_url' => 'http://update.opensourceclassifieds.org/plugins/',
-		'version' => '',
-		'author_name' => 'OpenSourceClassifieds',
-		'author_url' => 'http://www.opensourceclassifieds.org'
-	);
-}
-
 

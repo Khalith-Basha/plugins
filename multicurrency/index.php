@@ -1,15 +1,16 @@
 <?php
-/*
-Plugin Name: Multi currency
-Plugin URI: http://www.opensourceclassifieds.org/
-Description: Display the price of an ad in several currencies
-Version: 1.0
-Author: OpenSourceClassifieds
-Author URI: http://www.opensourceclassifieds.org/
-Short Name: multicurrency
-*/
 
-
+function getPluginInfo_multicurrency()
+{
+	return array(
+		'name' => 'Multicurrency',
+		'description' => 'Display the price of an ad in several currencies',
+		'main_url' => 'http://www.opensourceclassifieds.org',
+		'update_url' => 'http://update.opensourceclassifieds.org/plugins/',
+		'author_name' => 'OpenSourceClassifieds',
+		'author_url' => 'http://www.opensourceclassifieds.org'
+	);
+}
     function multicurrency_install() {
         $conn = getConnection();
         $conn->autocommit(false);
@@ -120,18 +121,4 @@ Short Name: multicurrency
     osc_add_hook('cron_hourly', 'multicurrency_get_data');
     osc_add_hook('header', 'multicurrency_header');
     
-?>
-function _info()
-{
-	return array(
-		'name' => '',
-		'description' => '',
-		'main_url' => 'http://www.opensourceclassifieds.org',
-		'update_url' => 'http://update.opensourceclassifieds.org/plugins/',
-		'version' => '',
-		'author_name' => 'OpenSourceClassifieds',
-		'author_url' => 'http://www.opensourceclassifieds.org'
-	);
-}
-
 

@@ -1,13 +1,18 @@
 <?php
-/*
-Plugin Name: Google Maps
-Plugin URI: http://www.opensourceclassifieds.org/
-Description: This plugin shows a Google Map on the location space of every item.
-Version: 2.1.4
-Author: OpenSourceClassifieds & kingsult
-Author URI: http://www.opensourceclassifieds.org/
-Plugin update URI: http://www.opensourceclassifieds.org/files/plugins/google_maps/update.php
-*/
+
+function getPluginInfo_google_maps()
+{
+	return array(
+		'name' => 'Google Maps',
+		'description' => 'This plugin shows a Google Map on the location space of every item',
+		'main_url' => 'http://www.opensourceclassifieds.org',
+		'update_url' => 'http://update.opensourceclassifieds.org/plugins/',
+		'author_name' => 'OpenSourceClassifieds',
+		'author_url' => 'http://www.opensourceclassifieds.org'
+	);
+}
+
+
 
     function google_maps_location() {
         $item = osc_item();
@@ -41,20 +46,5 @@ Plugin update URI: http://www.opensourceclassifieds.org/files/plugins/google_map
 
     osc_add_hook('item_form_post', 'insert_geo_location') ;
     osc_add_hook('item_edit_post', 'insert_geo_location') ;
-
-?>
-
-function _info()
-{
-	return array(
-		'name' => '',
-		'description' => '',
-		'main_url' => 'http://www.opensourceclassifieds.org',
-		'update_url' => 'http://update.opensourceclassifieds.org/plugins/',
-		'version' => '',
-		'author_name' => 'OpenSourceClassifieds',
-		'author_url' => 'http://www.opensourceclassifieds.org'
-	);
-}
 
 
